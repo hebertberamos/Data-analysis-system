@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style-pag-pricipal.css">
+    <title>Página inicial</title>
+</head>
+<body>
+    <main>
+        <section id="card-title-section" class="title-section">
+            <h1>Sistema de análise de dados de atividade física</h1>
+            <div class="card-divider">
+                <p></p>
+            </div>
+            <p>Confira agora o status das suas atividades físicas e fique por dentro de como andam seus exercícios!</p>
+        </section>
+        <section id="card-input-section" class="input-section">
+            <div class="section-input">
+                <div class="card-divider-entrance">
+                    <div class="entrance-card">
+                        <div class="img-entrance-card">
+                            <img src="../img/icon-file-150.png" alt="icon-file">
+                        </div>
+                        <div class="entrance-card-infomations">
+                            <h3>Selecione o arquivo CSV</h3>
+                            <p>Importe seu arquivo em formato CSV clicando aqui!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-divider-entrance">
+                    <div class="entrance-card">
+                        <div class="img-entrance-card">
+                            <img src="../img/data-icon-150.png" alt="icon-data">
+                        </div>
+                        <div class="entrance-card-infomations">
+                            <h3>Exibir informações gerais</h3>
+                            <p>Informações das suas atividades mais rápidas e atividades longas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-divider-entrance">
+                    <div class="entrance-card">
+                        <div class="img-entrance-card">
+                            <img src="../img/icon-information-interval-150.png" alt="icon-information-interval">
+                        </div>
+                        <div class="entrance-card-infomations">
+                            <h3>Informações por intervalo</h3>
+                            <p>Clique aqui e informe o intervalo de tempo que deseja análisar as atividades</p>
+                        </div>
+                    </div>
+                    <div class="card-form-enterance">
+                        <div class="card-form">
+                            <p>Informações</p>
+                            <form name="interval-form">
+                                <div class="form-controller">
+                                    <label for="starting-distance" ></label>
+                                    <input
+                                    type="text"
+                                    class="input-interval"
+                                    id="starting-distance"
+                                    placeholder="Distância inicial"
+                                    autocomplete="off">
+                                </div>
+                                <div class="form-controller">
+                                    <label for="final-distance"></label>
+                                    <input
+                                    type="text"
+                                    class="input-interval"
+                                    id="final-distance"
+                                    placeholder="Distância final"
+                                    autocomplete="off">
+                                </div>
+                                <div class="button">
+                                    <button id="btn-confirm">Confirmar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

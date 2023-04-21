@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --title-font: 'Roboto', sans-serif;
+    --paragraph-font: 'Open Sans', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--paragraph-font);
+}
+
+.title-section{
+    padding: 50px 120px 30px 120px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.title-section h1{
+    font-family: var(--title-font);
+    font-size: 37px;
+    font-weight: bolder;
+    width: 100%;
+    max-width: 500px;
+    padding-left: 30px;
+    padding-bottom: 8px;
+}
+
+.card-divider{
+    height: 1px;
+    width: 100%;
+    max-width: 80px;
+    padding-bottom: 20px;
+}
+
+.card-divider p{
+    background-color: rgb(16, 71, 173);
+    height: 3px;
+    width: 100%;
+}
+
+.title-section p{
+    width: 100%;
+    max-width: 400px;
+    font-family: var(--paragraph-font);
+    color: rgba(175, 174, 174, 0.89);
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+/* área de formatação da section que se encontra tudo */
+.input-section{
+    padding: 0px 20px 0px 20px;
+}
+
+/* àrea de formatação dos três cards de entrada para o usuário */
+.section-input{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Divisória entre os três cards */
+.card-divider-entrance{
+    padding: 5px;
+}
+
+/* Área de formatação dos cards */
+.entrance-card{
+    background-color: rgba(0, 0, 0, 0.075);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0px 30px 0px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.123);
+}
+
+.entrance-card:hover{
+    background-color: rgba(43, 100, 255, 0.301);
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.199);
+    cursor: pointer;
+    top: -3px;
+    left: -2px;
+    color: black;
+}
+
+/* Área de formatação das imagens do card */
+.img-entrance-card{
+    padding-top: 30px;   
+}
+
+.img-entrance-card img{
+    height: 100px;
+}
+
+/* Área de formatação dos textos dos cards */
+.entrance-card-infomations h3{
+    padding-top: 6px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.entrance-card-infomations p{
+    height: 80px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin: auto;
+    padding-top: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(102, 102, 102, 0.89);
+}
+
+/* Área de formatação de toda a área do formulário */
+.card-form-enterance{
+    margin-top: 10px;
+}
+
+.card-form{
+    background-color: rgba(0, 49, 185, 0.904);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.card-form p{
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Área de formataçãos dos dois inputs */
+.form-controller{
+    padding-bottom: 10px;
+}
+.form-controller input{
+    padding: 8px;
+    border: none;
+}
+
+.form-controller input:focus{
+    outline: 0;
+}
+
+/* Área de formatação do botão */
+.button{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.button button{
+    padding: 7px;
+    width: 100%;
+    max-width: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+}
+
+.button button:hover{
+    cursor: pointer;
+}
