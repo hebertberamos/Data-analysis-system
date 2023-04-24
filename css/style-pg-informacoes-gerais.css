@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --title-font: 'Roboto', sans-serif;
+    --paragraph-font: 'Open Sans', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--paragraph-font);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color: rgb(16, 71, 173);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.header-card-title{
+    width: 100%;
+    text-align: center;
+}
+
+.header-card-title h1{
+    margin-left: 30px;
+    font-family: var(--title-font);
+}
+
+.header-card-icon-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 50px;
+}
+
+.header-card-icon-home img{
+    height: 30px;
+    width: 30px;
+    background-color: azure;
+    padding: 5px;
+    border-radius: 35%;
+}
+
+header img:hover{
+    cursor: pointer;
+}
+
+/* Área que fica tudo */
+main{
+    padding: 0px 20px 10px 20px;
+}
+
+/* Área que vão ficas as duas opções dos três cards (atividade mais rápida / atividade mais longa) */
+.card-activity-informations{
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+/* Estilizam os cards em si */
+.card-information{
+    background-color: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    max-width: 300px;
+    margin: 15px 5px 0px 5px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.123);
+    position: relative;
+}
+
+.card-information:hover{
+    cursor: pointer;
+}
+
+/* Estiliza a área da imagem que estão no card */
+.img-card{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.img-card img{
+    width: 150px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.text-card h3{
+    font-family: var(--title-font);
+    font-weight: 500;
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 5px;
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+}
+
+.text-card p{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    max-width: 250px;
+    padding-bottom: 20px;
+    font-family: var(--paragraph-font);
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(102, 102, 102, 0.89);
+}
+

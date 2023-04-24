@@ -16,7 +16,9 @@
 .title-section{
     padding: 50px 120px 30px 120px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    animation: fadeInLeft;
+    animation-duration: 3s;
 }
 
 .title-section h1{
@@ -89,6 +91,21 @@
     color: black;
 }
 
+#entrance-card-enter-file{
+    animation: fadeInUp;
+    animation-duration: 1s;
+}
+
+#entrance-card-general-informations{
+    animation: fadeInUp;
+    animation-duration: 3s;
+}
+
+#entrance-card-information-time-interval{
+    animation: fadeInUp;
+    animation-duration: 4.5s;
+}
+
 /* Área de formatação das imagens do card */
 .img-entrance-card{
     padding-top: 30px;   
@@ -124,7 +141,7 @@
 }
 
 .card-form{
-    background-color: rgba(0, 49, 185, 0.904);
+    background-color: rgb(16, 71, 173);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,4 +193,6 @@
 
 .button button:hover{
     cursor: pointer;
+    background-color: rgb(12, 44, 104);
+    color: white;
 }
