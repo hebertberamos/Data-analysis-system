@@ -26,7 +26,8 @@
                             <img src="../img/icon-file-150.png" alt="icon-file">
                         </div>
                         <div class="entrance-card-infomations">
-                            <h3>Selecione o arquivo CSV</h3>
+                            <h3 id="file-name">Selecione o arquivo CSV</h3>
+                            <input type="file" id="file-input" style="display: none;">
                             <p>Importe seu arquivo em formato CSV clicando aqui!</p>
                         </div>
                     </div>
@@ -53,7 +54,7 @@
                         </div>
                     </div>
                     <div class="card-form-enterance">
-                        <div class="card-form" id="span-card-form">
+                        <div class="card-form" id="span-card-form" style="display: none;">
                             <p>Informe as distâncias</p>
                             <form name="interval-form">
                                 <div class="form-controller">
@@ -84,5 +85,7 @@
             </div>
         </section>
     </main>
+    <script type="module" src="../js/pages-script/main-page.js"></script>
+    <script type="module" src="../js/file-controller.js"></script>
 </body>
 </html>
