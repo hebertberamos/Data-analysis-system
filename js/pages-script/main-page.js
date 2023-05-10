@@ -1,50 +1,33 @@
-function State(){
+import * as elements from '../elements.js';
+import * as fileController from '../file-controller.js';
 
-    this.cardEnterFileMainPage = null;
-    this.cardShowAllInformationsMainPage = null;
-    this.cardShowInformationPerIntervalMainPage = null;
-    this.cardFormIntervalMainPage = null;
-
-    this.fileNameMainPage = null;
-    this.inputFileMainPage = null;
-
-    this.inputStartingDistanceMainPage = null;
-    this.inputFinalDistanceMainPage = null
-    this.btnConfirmMainPage = null;
-}
-
-const state = new State();
-
-state.cardEnterFileMainPage = document.querySelector('#entrance-card-enter-file');
-state.cardShowAllInformationsMainPage = document.querySelector("#entrance-card-general-informations")
-state.cardShowInformationPerIntervalMainPage = document.querySelector("#entrance-card-information-time-interval");
-state.cardFormIntervalMainPage = document.querySelector("#span-card-form");
-
-state.fileNameMainPage = document.querySelector('#file-name');
-state.inputFileMainPage = document.querySelector('#file-input');
-
-state.inputStartingDistanceMainPage = document.querySelector('#starting-distance');
-state.inputFinalDistanceMainPage = document.querySelector('#final-distance');
-state.btnConfirmMainPage = document.querySelector('#btn-confirm');
+console.log(elements.cardEnterFileMainPage);
 
 // Ao clicar no card de seleção de arquivo, abre a aba de seleção
 // Quando estiver selecionado manda para o arquivo js que é responsável por administrar os dados da tabela
-state.cardEnterFileMainPage.addEventListener('click', () => {
-    state.inputFileMainPage.click();
+elements.cardEnterFileMainPage.addEventListener('click', () => {
+    elements.inputFileMainPage.click();
 }); 
 
 // Quando o arquivo é selecionado o título do carde recebe o nome do arquivo selecionado
-state.inputFileMainPage.addEventListener('change', function() {
-    const nameFile = state.inputFileMainPage.value.split('\\').pop();
-    state.fileNameMainPage.innerText = nameFile;
+elements.inputFileMainPage.addEventListener('change', async() => {
+    const nameFile = elements.inputFileMainPage.value.split('\\').pop();
+    elements.fileNameMainPage.innerText = nameFile;
+
+    const result = await fileController.gettingArrayData(elements.inputFileMainPage);
+
+    console.log(result);
+
+
+    // const resultSpeed = fileController.getSpeedObjectOne();
 });
 
 //Quando o card for clicado ele vai abri a janela de informações gerais das atividades
 //Abrir apenas se o arquivo já tiver sido enviado
-state.cardShowAllInformationsMainPage.addEventListener('click', () => {
+elements.cardShowAllInformationsMainPage.addEventListener('click', () => {
     
     //Verificação de arquivo
-    if(state.inputFileMainPage.value == ""){
+    if(elements.inputFileMainPage.value == ""){
         console.log("vazio");
     }
     else{
@@ -53,32 +36,32 @@ state.cardShowAllInformationsMainPage.addEventListener('click', () => {
 });
 
 //Quando o card for clicado irá aparecer um formulário para ser preenchido pelo usuário
-state.cardShowInformationPerIntervalMainPage.addEventListener('click', () => {
-    if(state.cardFormIntervalMainPage.style.display == "none"){
-        state.cardFormIntervalMainPage.style.display = 'flex';
+elements.cardShowInformationPerIntervalMainPage.addEventListener('click', () => {
+    if(elements.cardFormIntervalMainPage.style.display == "none"){
+        elements.cardFormIntervalMainPage.style.display = 'flex';
     }else{
-        state.cardFormIntervalMainPage.style.display = 'none';
+        elements.cardFormIntervalMainPage.style.display = 'none';
     }
 });
 
 //Alterando valor do input do formulário
-state.inputStartingDistanceMainPage.addEventListener('change', (event) => {
+elements.inputStartingDistanceMainPage.addEventListener('change', (event) => {
     const resultInputStartDistante = event.target.value;
-    state.inputStartingDistanceMainPage.value = resultInputStartDistante;
+    elements.inputStartingDistanceMainPage.value = resultInputStartDistante;
 });
 
-state.inputFinalDistanceMainPage.addEventListener('change', (event) => {
+elements.inputFinalDistanceMainPage.addEventListener('change', (event) => {
     const resultInputFinalDistante = event.target.value;
-    state.inputFinalDistanceMainPage.value = resultInputFinalDistante;
+    elements.inputFinalDistanceMainPage.value = resultInputFinalDistante;
 })
 
 //Funcionalidade do botão de envio das informações do formulário 
 //Far a ele a funcionalidade apenas quando os inputs estiverem devidamente informados
-state.btnConfirmMainPage.addEventListener('click', (event) => {
+elements.btnConfirmMainPage.addEventListener('click', (event) => {
     event.preventDefault();
 
-    if(!state.inputFileMainPage.value == ""){
-        if(!state.inputStartingDistanceMainPage.value == "" && !state.inputFinalDistanceMainPage.value == ""){
+    if(!elements.inputFileMainPage.value == ""){
+        if(!elements.inputStartingDistanceMainPage.value == "" && !elements.inputFinalDistanceMainPage.value == ""){
             window.location.href = 'pg-informacoes-intervalo.html';
         }
     }
