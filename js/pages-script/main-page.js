@@ -1,7 +1,6 @@
 import * as elements from '../elements.js';
 import * as fileController from '../file-controller.js';
 
-console.log(elements.cardEnterFileMainPage);
 
 // Ao clicar no card de seleção de arquivo, abre a aba de seleção
 // Quando estiver selecionado manda para o arquivo js que é responsável por administrar os dados da tabela
@@ -13,25 +12,34 @@ elements.cardEnterFileMainPage.addEventListener('click', () => {
 elements.inputFileMainPage.addEventListener('change', async() => {
     const nameFile = elements.inputFileMainPage.value.split('\\').pop();
     elements.fileNameMainPage.innerText = nameFile;
-
-    const result = await fileController.gettingArrayData(elements.inputFileMainPage);
-
-    console.log(result);
-
-
-    // const resultSpeed = fileController.getSpeedObjectOne();
 });
 
 //Quando o card for clicado ele vai abri a janela de informações gerais das atividades
 //Abrir apenas se o arquivo já tiver sido enviado
-elements.cardShowAllInformationsMainPage.addEventListener('click', () => {
+elements.cardShowAllInformationsMainPage.addEventListener('click', async() => {
     
     //Verificação de arquivo
     if(elements.inputFileMainPage.value == ""){
         console.log("vazio");
     }
     else{
-        window.location.href = 'pg-informacoes-gerais.html'; 
+        await fileController.getDataFromFile(elements.inputFileMainPage);
+        //Atividade mais rápida
+
+        const fastestActivityDistance = fileController.catchingDistanceFromTheFastesActivity();
+        const fastestActivityAvarageSpeed = fileController.catchingAvarageSpeedFromTheFastesActivity();
+
+        localStorage.setItem('distance-from-fastes-activity', `${fastestActivityDistance} km`);
+        localStorage.setItem('avarage-speed-from-fastes-activity', `${fastestActivityAvarageSpeed} km/h`);
+
+        //Atividade mais longa
+        const longestActivityDistante = fileController.catchingDistanceFromTheLongerActivity();
+        const longestActivityAvarageSpeed = fileController.catchingAvarageSpeedFromTheLongerActivity();
+
+        localStorage.setItem('distance-from-longest-activity', `${longestActivityDistante} km`);
+        localStorage.setItem(`avarage-speed-from-longest-activity`, `${longestActivityAvarageSpeed} km/h`)
+
+        window.location.href = 'pg-informacoes-gerais.html';
     }
 });
 
