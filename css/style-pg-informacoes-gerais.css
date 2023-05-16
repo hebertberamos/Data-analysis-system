@@ -108,6 +108,10 @@ main{
 }
 
 .text-card p{
+    
+}
+
+.paragraph{
     text-align: center;
     margin: auto;
     width: 100%;

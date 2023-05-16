@@ -37,20 +37,58 @@ export async function getDataFromFile(filePath){
     }
 
     fileData = data;
- 
+
+    sayArray();
 }
 
-export async function gettingArrayData(filePath){
-    await getDataFromFile(filePath);
-
-    return fileData;
+function sayArray(){
+    console.log(fileData);
 }
 
-//Informação da velocidade média do primeiro objeto do array
 
-// export async function getSpeedObjectOne(){
-//     const objectOne = fileData[0];
-//     const objectOneAvarageSpeed = objectOne['Average Speed (km/h)'];
+// FUNÇÃO DE CAPTURA DA ATIVIDADE MAIS RÁPIDA
+function catchingObjectGreaterSpeed(){
+    const fastestActivity = fileData.reduce((prev, current) => {
+        return prev['Average Speed (km/h)'] > current['Average Speed (km/h)'] ? prev : current;
+    });
 
-//     return objectOneAvarageSpeed;
-// }
+    return fastestActivity;
+}
+// Capturando a distância da atividade mais rápida
+export function catchingDistanceFromTheFastesActivity(){
+    const fastestActivity = catchingObjectGreaterSpeed();
+    const distance = fastestActivity['Distance (km)'];
+
+    return distance;
+}
+// Capturando a velocidade mádia da atividade mais rápida
+export function catchingAvarageSpeedFromTheFastesActivity(){
+    const fastestActivity = catchingObjectGreaterSpeed();
+    const avarageSpeed = fastestActivity['Average Speed (km/h)'];
+
+    return avarageSpeed;
+}
+
+
+// FUNÇÃO DE CAPTURA DA ATIVIDADE MAIS LONGA
+function catchingObjectGreaterDistance(){
+    const longestActivity = fileData.reduce((prev, current) => {
+        return prev['Distance (km)'] > current['Distance (km)'] ? prev : current;
+    });
+
+    return longestActivity;
+}
+// Capturando distância da atividade mais longa
+export function catchingDistanceFromTheLongerActivity(){
+    const longestActivity = catchingObjectGreaterDistance();
+    const distance = longestActivity['Distance (km)'];
+
+    return distance;
+}
+// Capturando a velocidade mádia da atividade mais longa
+export function catchingAvarageSpeedFromTheLongerActivity(){
+    const longestActivity = catchingObjectGreaterDistance();
+    const avarageSpeed = longestActivity['Average Speed (km/h)'];
+
+    return avarageSpeed;
+}
