@@ -25,7 +25,6 @@ elements.cardShowAllInformationsMainPage.addEventListener('click', async() => {
     else{
         await fileController.getDataFromFile(elements.inputFileMainPage);
         //Atividade mais rápida
-
         const fastestActivityDistance = fileController.catchingDistanceFromTheFastesActivity();
         const fastestActivityAvarageSpeed = fileController.catchingAvarageSpeedFromTheFastesActivity();
 
@@ -39,6 +38,35 @@ elements.cardShowAllInformationsMainPage.addEventListener('click', async() => {
         localStorage.setItem('distance-from-longest-activity', `${longestActivityDistante} km`);
         localStorage.setItem(`avarage-speed-from-longest-activity`, `${longestActivityAvarageSpeed} km/h`)
 
+        //Corrida mais rapida 
+        const speedFromFastestRun = fileController.catchingAvarageSpeedFromTheFastestRun();
+        const distanceFromFastestRun = fileController.catchingDistanceFromTheFastestRun();
+
+        localStorage.setItem('distance-from-fastes-activity-race', `${distanceFromFastestRun} km`);
+        localStorage.setItem('avarage-speed-from-fastes-activity-race', `${speedFromFastestRun} km/h`);
+
+        //Corrida mais longa
+        const avarageSpeedFarthesRun = fileController.catchingAvarageSpeedFromFarthesRun();
+        const distanceFarthesRun = fileController.catchingDistanceFromFarthesRun();
+
+        localStorage.setItem('distance-from-longest-activity-race', `${distanceFarthesRun} km`);
+        localStorage.setItem('avarage-speed-from-longest-activity-race', `${avarageSpeedFarthesRun} km/h`);
+        
+        //Ciclismo mais rápido
+        const avarageSpeedFromFastestCiclism = fileController.catchingAvarageSpeedFromFastesCiclism();
+        const distanceFromFastestCiclism = fileController.catchingDistanceFromFastesCiclism();
+
+        localStorage.setItem('avarage-speed-from-fastes-activity-ciclism', `${avarageSpeedFromFastestCiclism} km/h`);
+        localStorage.setItem('distance-from-fastes-activity-ciclism', `${distanceFromFastestCiclism} km`);
+
+        // Ciclismo mais longo
+        const avarageSpeedFromFarthesCiclism = fileController.catchingAvarageSpeedFromFarthesCiclism();
+        const distanceFromFarthesCiclism = fileController.catchingDistanceFromFarthesCiclism();
+
+        localStorage.setItem('distance-from-longest-activity-ciclism', `${distanceFromFarthesCiclism} km`);
+        localStorage.setItem('avarage-speed-from-longest-activity-ciclism', `${avarageSpeedFromFarthesCiclism} km/h`);
+
+        
         window.location.href = 'pg-informacoes-gerais.html';
     }
 });

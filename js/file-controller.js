@@ -38,20 +38,15 @@ export async function getDataFromFile(filePath){
 
     fileData = data;
 
-    sayArray();
 }
 
-function sayArray(){
-    console.log(fileData);
-}
-
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
 // FUNÇÃO DE CAPTURA DA ATIVIDADE MAIS RÁPIDA
 function catchingObjectGreaterSpeed(){
     const fastestActivity = fileData.reduce((prev, current) => {
         return prev['Average Speed (km/h)'] > current['Average Speed (km/h)'] ? prev : current;
     });
-
+    
     return fastestActivity;
 }
 // Capturando a distância da atividade mais rápida
@@ -69,7 +64,7 @@ export function catchingAvarageSpeedFromTheFastesActivity(){
     return avarageSpeed;
 }
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
 // FUNÇÃO DE CAPTURA DA ATIVIDADE MAIS LONGA
 function catchingObjectGreaterDistance(){
     const longestActivity = fileData.reduce((prev, current) => {
@@ -91,4 +86,121 @@ export function catchingAvarageSpeedFromTheLongerActivity(){
     const avarageSpeed = longestActivity['Average Speed (km/h)'];
 
     return avarageSpeed;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
+// FUNCAO DE CAPTURA DE OBJETOS DE TIPO CORRIDA
+function getRaceType(){
+    const raceObject = fileData.filter(obj => obj.Type == 'Running');
+
+    return raceObject;
+}
+// Capturando a corrida mais rápida
+function catchingFastesRun(){
+    const raceObject = getRaceType();
+
+    const fastestRun = raceObject.reduce((prev, current) => {
+        return prev['Average Speed (km/h)'] > current['Average Speed (km/h)'] ? prev : current;
+    });
+
+    return fastestRun;
+}
+// Pegando a velocidade da corrida mais rápida
+export function catchingAvarageSpeedFromTheFastestRun(){
+    const fastestRun = catchingFastesRun();
+
+    const speedFastestRun = fastestRun['Average Speed (km/h)'];
+
+    return speedFastestRun;
+}
+// Pegando distancia da corrida mais rapida
+export function catchingDistanceFromTheFastestRun(){
+    const fastestRun = catchingFastesRun();
+
+    const distanceFastestRun = fastestRun['Distance (km)'];
+
+    return distanceFastestRun;
+}
+
+// Capiturando a corrida mais longa
+function catchingFarthestRun(){
+    const raceObject = getRaceType();
+
+    const farthestRun = raceObject.reduce((prev, current) => {
+        return prev['Distance (km)'] > current['Distance (km)'] ? prev : current;
+    });
+
+    return farthestRun;
+}
+
+export function catchingAvarageSpeedFromFarthesRun(){
+    const farthestRun = catchingFarthestRun();
+    const speedFarthesRun = farthestRun['Average Speed (km/h)'];
+
+    return speedFarthesRun;
+}
+
+export function catchingDistanceFromFarthesRun(){
+    const farthestRun = catchingFarthestRun();
+    const distanceFarthesRun = farthestRun['Distance (km)'];
+
+    return distanceFarthesRun;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
+// FUNCAO DE CAPTURA DE OBJETOS DE TIPO CICLISMO
+function getCiclismType(){
+    const ciclismObject = fileData.filter(obj => obj.Type == 'Cycling');
+
+    return ciclismObject;
+}
+
+// Capturando a tividade de ciclismo mais rápida
+function catchingFastesCiclism(){
+    const ciclismObjects = getCiclismType();
+    const fastesCiclism = ciclismObjects.reduce((prev, current) => {
+        return prev['Average Speed (km/h)'] > current['Average Speed (km/h)'] ? prev : current;
+    });
+
+    return fastesCiclism;
+}
+// Pegando a velocidade do ciclismo mais rapido
+export function catchingAvarageSpeedFromFastesCiclism(){
+    const fastesCiclism = catchingFastesCiclism();
+    const avarageSpeedFastesCiclism = fastesCiclism['Average Speed (km/h)'];
+
+    return avarageSpeedFastesCiclism;
+}
+// Pegando a distancia do ciclismo mais rapido
+export function catchingDistanceFromFastesCiclism(){
+    const fastesCiclism = catchingFastesCiclism();
+    const distanceFastesCiclism = fastesCiclism['Distance (km)'];
+
+    return distanceFastesCiclism;
+}
+
+
+// Capturando a atividade de ciclismo mais longa
+function catchingFarthestCiclism(){
+    const ciclismObjects = getCiclismType();
+    const longestCiclism = ciclismObjects.reduce((prev, current) => {
+        return prev['Distance (km)'] > current['Distance (km)'] ? prev : current;
+    });
+
+    return longestCiclism;
+}
+// Pegando velocidade do ciclismo mais longo
+export function catchingAvarageSpeedFromFarthesCiclism(){
+    const longestCiclism = catchingFarthestCiclism();
+    const avarageSpeedFarthesCiclism = longestCiclism['Average Speed (km/h)'];
+
+    return avarageSpeedFarthesCiclism;
+}
+// pegando a distancia do ciclismo mais longo
+export function catchingDistanceFromFarthesCiclism(){
+    const longestCiclism = catchingFarthestCiclism();
+    const distanceFarthesCiclism = longestCiclism['Distance (km)'];
+
+    return distanceFarthesCiclism;
 }
