@@ -52,7 +52,7 @@ function catchingObjectGreaterSpeed(){
 // Capturando a distância da atividade mais rápida
 export function catchingDistanceFromTheFastesActivity(){
     const fastestActivity = catchingObjectGreaterSpeed();
-    const distance = fastestActivity['Distance (km)'];
+    const distance = fastestActivity['Distance'];
 
     return distance;
 }
@@ -68,7 +68,7 @@ export function catchingAvarageSpeedFromTheFastesActivity(){
 // FUNÇÃO DE CAPTURA DA ATIVIDADE MAIS LONGA
 function catchingObjectGreaterDistance(){
     const longestActivity = fileData.reduce((prev, current) => {
-        return prev['Distance (km)'] > current['Distance (km)'] ? prev : current;
+        return prev['Distance'] > current['Distance'] ? prev : current;
     });
 
     return longestActivity;
@@ -76,7 +76,7 @@ function catchingObjectGreaterDistance(){
 // Capturando distância da atividade mais longa
 export function catchingDistanceFromTheLongerActivity(){
     const longestActivity = catchingObjectGreaterDistance();
-    const distance = longestActivity['Distance (km)'];
+    const distance = longestActivity['Distance'];
 
     return distance;
 }
@@ -117,7 +117,7 @@ export function catchingAvarageSpeedFromTheFastestRun(){
 export function catchingDistanceFromTheFastestRun(){
     const fastestRun = catchingFastesRun();
 
-    const distanceFastestRun = fastestRun['Distance (km)'];
+    const distanceFastestRun = fastestRun['Distance'];
 
     return distanceFastestRun;
 }
@@ -127,7 +127,7 @@ function catchingFarthestRun(){
     const raceObject = getRaceType();
 
     const farthestRun = raceObject.reduce((prev, current) => {
-        return prev['Distance (km)'] > current['Distance (km)'] ? prev : current;
+        return prev['Distance'] > current['Distance'] ? prev : current;
     });
 
     return farthestRun;
@@ -142,7 +142,7 @@ export function catchingAvarageSpeedFromFarthesRun(){
 
 export function catchingDistanceFromFarthesRun(){
     const farthestRun = catchingFarthestRun();
-    const distanceFarthesRun = farthestRun['Distance (km)'];
+    const distanceFarthesRun = farthestRun['Distance'];
 
     return distanceFarthesRun;
 }
@@ -175,7 +175,7 @@ export function catchingAvarageSpeedFromFastesCiclism(){
 // Pegando a distancia do ciclismo mais rapido
 export function catchingDistanceFromFastesCiclism(){
     const fastesCiclism = catchingFastesCiclism();
-    const distanceFastesCiclism = fastesCiclism['Distance (km)'];
+    const distanceFastesCiclism = fastesCiclism['Distance'];
 
     return distanceFastesCiclism;
 }
@@ -185,7 +185,7 @@ export function catchingDistanceFromFastesCiclism(){
 function catchingFarthestCiclism(){
     const ciclismObjects = getCiclismType();
     const longestCiclism = ciclismObjects.reduce((prev, current) => {
-        return prev['Distance (km)'] > current['Distance (km)'] ? prev : current;
+        return prev['Distance'] > current['Distance'] ? prev : current;
     });
 
     return longestCiclism;
@@ -200,7 +200,70 @@ export function catchingAvarageSpeedFromFarthesCiclism(){
 // pegando a distancia do ciclismo mais longo
 export function catchingDistanceFromFarthesCiclism(){
     const longestCiclism = catchingFarthestCiclism();
-    const distanceFarthesCiclism = longestCiclism['Distance (km)'];
+    const distanceFarthesCiclism = longestCiclism['Distance'];
 
     return distanceFarthesCiclism;
+}
+
+
+//FUNÇÃO DE CAPTURA DOS OBJETOS A PARTIR DAS DISTANCIAS SELECIONADAS
+function getObjectsInsideParameter(inicialDistance, finalDistance){
+
+    return fileData.filter(obj => {
+        return obj.Distance >= inicialDistance && obj.Distance <= finalDistance;
+    });
+}
+//Pegando atividade mais rápida entre os objetos selecionados
+function getFasterActiviteInterval(inicialDistance, finalDistance){
+    const objects = getObjectsInsideParameter(inicialDistance, finalDistance);
+
+    const fastestActivityInterval = objects.reduce((prev, current) => {
+        return prev['Average Speed (km/h)'] > current['Average Speed (km/h)'] ? prev : current;
+    });
+
+    return fastestActivityInterval;
+}
+//pegando velocidade 
+export function catchinAvaraSpeedFasterActiviteInterval(inicialDistance, finalDistance){
+    const fastestActiviteInterval = getFasterActiviteInterval(inicialDistance, finalDistance);
+
+    const avarageSpeed = fastestActiviteInterval['Average Speed (km/h)'];
+
+    return avarageSpeed;
+}
+//pegando distancia
+export function catchingDistanceSpeedFasterActiviteInterval(inicialDistance, finalDistance){
+    const fastestActiviteInterval = getFasterActiviteInterval(inicialDistance, finalDistance);
+
+    const distance = fastestActiviteInterval['Distance'];
+
+    return distance;
+}
+
+//Pegando atividade mais longa entre os objetos selecionados
+//retirar export
+function getFarthestActiviteInterval(inicialDistance, finalDistance){
+    const objects = getObjectsInsideParameter(inicialDistance, finalDistance);
+
+    const farthestActivityInterval = objects.reduce((prev, current) => {
+        return prev['Distance'] > current['Distance'] ? prev : current;
+    });
+
+    return farthestActivityInterval;
+}
+//pegando velocidade 
+export function catchinAvaraSpeedFarthestActiviteInterval(inicialDistance, finalDistance){
+    const farthestActivityInterval = getFarthestActiviteInterval(inicialDistance, finalDistance);
+
+    const avarageSpeed = farthestActivityInterval['Average Speed (km/h)'];
+
+    return avarageSpeed;    
+}
+
+export function catchinDistanceFarthestActiviteInterval(inicialDistance, finalDistance){
+    const farthestActivityInterval = getFarthestActiviteInterval(inicialDistance, finalDistance);
+
+    const distance = farthestActivityInterval['Distance'];
+
+    return distance;
 }

@@ -13,7 +13,7 @@
             <h1>Informações por intervalo informado</h1>
         </div>
         <div class="header-card-icon-home">
-            <a href="pagina-principal.html" target="_blank"><img src="../img/home.png" alt="home"></a>
+            <a href="pagina-principal.html"><img src="../img/home.png" alt="home"></a>
         </div>
     </header>
     <main>
@@ -23,8 +23,18 @@
                     <img src="../img/speed-img.png" alt="speed-img" style="height: 158.68px;">
                 </div>
                 <div class="card-text">
-                    <h3 id="title-fastest-activity-per-interval">Atividade mais rápida entre XXX e YYY</h3>
-                    <p id="paragraph-fastes-activity-per-interval">A distância percorrida foi de XXX Km com velocidade média de YYY</p>
+                    <h3 class="title" id="title-fastest-activity-per-interval">
+                        Atividade mais rápida entre 
+                        <p class="used-paragraph" id="start-distance-fast-activity">XXX</p> 
+                        e 
+                        <p class="used-paragraph" id="final-distance-fast-activity">YYY</p>
+                    </h3>
+                    <div id="paragraph-fastes-activity-per-interval" class="paragraph">
+                        <p>A distância percorrida foi de</p>
+                        <p class="used-paragraph" id="distance-faster-activity-per-interval">XXX</p>
+                        <p>Com velocidade média de</p>
+                        <p class="used-paragraph" id="avarage-speed-fastes-activity-per-interval">YYY</p>
+                    </div>
                 </div>
             </div>
             <div class="card-information">
@@ -32,11 +42,22 @@
                     <img src="../img/long-activity-img.png" alt="long-activity">
                 </div>
                 <div class="card-text">
-                    <h3 id="title-longest-activity-per-interval">Atividade mais longa entre XXX e YYY</h3>
-                    <p id="paragraph-longest-activity-per-interval">A distância percorrida foi de XXX Km com velocidade média de YYY</p>
+                    <h3 class="title" id="title-longest-activity-per-interval">
+                        Atividade mais longa entre 
+                        <p class="used-paragraph" id="start-distance-longest-activity">XXX</p> 
+                        e 
+                        <p class="used-paragraph" id="final-distance-longest-activity">YYY</p>
+                    </h3>
+                    <div id="paragraph-longest-activity-per-interval" class="paragraph">
+                        <p>A distância percorrida foi de</p> 
+                        <p class="used-paragraph" id="distance-longest-activity-per-interval">XXX</p>
+                        <p>Com velocidade média de</p>
+                        <p class="used-paragraph" id="avarage-speed-longest-actvity-per-interval">YYY</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+    <script type="module" src="../js/pages-script/interval-informations-page.js"></script>
 </body>
 </html>
