@@ -12,6 +12,8 @@ elements.cardEnterFileMainPage.addEventListener('click', () => {
 elements.inputFileMainPage.addEventListener('change', async() => {
     const nameFile = elements.inputFileMainPage.value.split('\\').pop();
     elements.fileNameMainPage.innerText = nameFile;
+
+    await fileController.getDataFromFile(elements.inputFileMainPage);
 });
 
 //Quando o card for clicado ele vai abri a janela de informações gerais das atividades
@@ -23,7 +25,6 @@ elements.cardShowAllInformationsMainPage.addEventListener('click', async() => {
         console.log("vazio");
     }
     else{
-        await fileController.getDataFromFile(elements.inputFileMainPage);
         //Atividade mais rápida
         const fastestActivityDistance = fileController.catchingDistanceFromTheFastesActivity();
         const fastestActivityAvarageSpeed = fileController.catchingAvarageSpeedFromTheFastesActivity();
@@ -80,24 +81,50 @@ elements.cardShowInformationPerIntervalMainPage.addEventListener('click', () => 
     }
 });
 
-//Alterando valor do input do formulário
+    var startDistance = null;
+    var finalDistance = null;
+
+// FORMULARIO
+//Input de entrada da distância inicial
 elements.inputStartingDistanceMainPage.addEventListener('change', (event) => {
     const resultInputStartDistante = event.target.value;
     elements.inputStartingDistanceMainPage.value = resultInputStartDistante;
+    startDistance = parseFloat(elements.inputStartingDistanceMainPage.value);
 });
 
+//Input de entrada da distância final
 elements.inputFinalDistanceMainPage.addEventListener('change', (event) => {
     const resultInputFinalDistante = event.target.value;
     elements.inputFinalDistanceMainPage.value = resultInputFinalDistante;
-})
+    finalDistance = parseFloat(elements.inputFinalDistanceMainPage.value);
+});
 
 //Funcionalidade do botão de envio das informações do formulário 
-//Far a ele a funcionalidade apenas quando os inputs estiverem devidamente informados
+//Dar a ele a funcionalidade apenas quando os inputs estiverem devidamente informados
 elements.btnConfirmMainPage.addEventListener('click', (event) => {
     event.preventDefault();
 
     if(!elements.inputFileMainPage.value == ""){
         if(!elements.inputStartingDistanceMainPage.value == "" && !elements.inputFinalDistanceMainPage.value == ""){
+
+            const startDistanceNumber = parseFloat(startDistance);
+            const finalDistanceNumber = parseFloat(finalDistance);
+
+            localStorage.setItem('start-distance', `${startDistanceNumber} km`);
+            localStorage.setItem('final-distance', `${finalDistanceNumber} km`);
+
+            const avarageSpeedFastestActivite = fileController.catchinAvaraSpeedFasterActiviteInterval(startDistance, finalDistance);
+            const distanceFastestActivite = fileController.catchingDistanceSpeedFasterActiviteInterval(startDistance, finalDistance);
+
+            localStorage.setItem('avarage-speed-fastes-activity-per-interval', `${avarageSpeedFastestActivite} km/h`);
+            localStorage.setItem('distance-faster-activity-per-interval', `${distanceFastestActivite} km`);
+
+            const avarageSpeedFarthesActivite = fileController.catchinAvaraSpeedFarthestActiviteInterval(startDistance, finalDistance);
+            const distanceFarthesActivite = fileController.catchinDistanceFarthestActiviteInterval(startDistance, finalDistance);
+
+            localStorage.setItem('avarage-speed-longest-actvity-per-interval', `${avarageSpeedFarthesActivite} km/h`);
+            localStorage.setItem('distance-longest-activity-per-interval', `${distanceFarthesActivite} km`);
+
             window.location.href = 'pg-informacoes-intervalo.html';
         }
     }

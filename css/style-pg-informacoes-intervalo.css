@@ -104,14 +104,18 @@ main{
 .card-text h3{
     text-align: center;
     width: 100%;
-    max-width: 190px;
+    max-width: 250px;
     margin-top: 15px;
 }
 
-.card-text p{
+.paragraph{
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     width: 100%;
-    max-width: 250px;
+    max-width: 270px;
+    padding-left: 3px;
+    padding-right: 8px;
     margin-top: 7px;
     margin-bottom: 20px;
     font-family: var(--paragraph-font);
@@ -120,3 +124,15 @@ main{
     color: rgba(102, 102, 102, 0.89);
 }
 
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.used-paragraph{
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: center;
+    align-items: center;
+}

@@ -107,12 +107,9 @@ main{
     margin: auto;
 }
 
-.text-card p{
-    
-}
-
 .paragraph{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
     margin: auto;
     width: 100%;
     max-width: 250px;
@@ -123,3 +120,6 @@ main{
     color: rgba(102, 102, 102, 0.89);
 }
 
+.used-paragraph{
+    margin-left: 3px;
+}
