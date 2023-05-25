@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style-pg-informacoes-gerais.css">
+    <link rel="stylesheet" href="css/modal.css">
     <title>Informações gerais</title>
 </head>
 <body>
@@ -112,6 +113,24 @@
             </div>
         </section>
     </main>
-    <script type="module" src="../js/pages-script/general-inf-page.js"></script>
+    <section id="modal-general-informations" class="modal-container "> <!-- AQUI FICA O ACTIVE DO MODAL -->
+        <div class="modal-box">
+            <div class="modal-content">
+                <div class="modal-content-img">
+                    
+                </div>
+                <div class="modal-content-paragraph">
+                    <p>Data: <p id="paragraph-modal-date">xx/xx/xxxx</p></p>
+                    <p>Tipo: <p id="paragraph-modal-type">xxxxxx</p></p>
+                    <p>Distância: <p id="paragraph-modal-distance">xx.xx km</p></p>
+                    <p>Duração: <p id="paragraph-modal-duration">xxxxx</p></p>
+                    <p>Velocidade mádia: <p id="paragraph-modal-avarage-speed">xxxx km/h</p></p>
+                    <p>Calorias queimadas: <p id="paragraph-modal-calories-burned">xxxxx</p></p>
+                </div>
+            </div>
+            <button id="btn-close-modal">Fechar</button>
+        </div>
+    </section>
+    <script type="module" src="./js/initialize/init-general-inf-page.js"></script>
 </body>
 </html>

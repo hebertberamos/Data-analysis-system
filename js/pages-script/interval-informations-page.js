@@ -1,32 +1,36 @@
-const startDistance = localStorage.getItem('start-distance');
-const finalDistance = localStorage.getItem('final-distance');
+export function initIntervalInformationsPage(){
 
-const paragraphStartDistanceFastestActivity = document.querySelector('#start-distance-fast-activity');
-const paragraphFinalDistanceFastestActivity = document.querySelector('#final-distance-fast-activity');
+    const startDistance = localStorage.getItem('start-distance');
+    const finalDistance = localStorage.getItem('final-distance');
 
-paragraphStartDistanceFastestActivity.innerText = startDistance;
-paragraphFinalDistanceFastestActivity.innerText = finalDistance;
+    const paragraphStartDistanceFastestActivity = document.querySelector('#start-distance-fast-activity');
+    const paragraphFinalDistanceFastestActivity = document.querySelector('#final-distance-fast-activity');
 
-const paragraphStartDistanceLongestActivity = document.querySelector('#start-distance-longest-activity');
-const paragraphFinalDistanceLongestActivity = document.querySelector('#final-distance-longest-activity');
+    paragraphStartDistanceFastestActivity.innerText = startDistance;
+    paragraphFinalDistanceFastestActivity.innerText = finalDistance;
 
-paragraphStartDistanceLongestActivity.innerText = startDistance;
-paragraphFinalDistanceLongestActivity.innerText = finalDistance;
+    const paragraphStartDistanceLongestActivity = document.querySelector('#start-distance-longest-activity');
+    const paragraphFinalDistanceLongestActivity = document.querySelector('#final-distance-longest-activity');
 
-const fastestActiviteAvarageSpeed = localStorage.getItem('avarage-speed-fastes-activity-per-interval');
-const fastestActiviteDistance = localStorage.getItem('distance-faster-activity-per-interval');
+    paragraphStartDistanceLongestActivity.innerText = startDistance;
+    paragraphFinalDistanceLongestActivity.innerText = finalDistance;
 
-const paragraphAvarageSpeedFastestActivite = document.querySelector('#avarage-speed-fastes-activity-per-interval');
-const paragraphDistanceFastestActivite = document.querySelector('#distance-faster-activity-per-interval');
+    const fastestActiviteAvarageSpeed = localStorage.getItem('avarage-speed-fastes-activity-per-interval');
+    const fastestActiviteDistance = localStorage.getItem('distance-faster-activity-per-interval');
 
-paragraphAvarageSpeedFastestActivite.innerText = fastestActiviteAvarageSpeed;
-paragraphDistanceFastestActivite.innerText = fastestActiviteDistance;
+    const paragraphAvarageSpeedFastestActivite = document.querySelector('#avarage-speed-fastes-activity-per-interval');
+    const paragraphDistanceFastestActivite = document.querySelector('#distance-faster-activity-per-interval');
 
-const farthestActivityAvarageSpeed = localStorage.getItem('avarage-speed-longest-actvity-per-interval');
-const farthestActivityDistance = localStorage.getItem('distance-longest-activity-per-interval');
+    paragraphAvarageSpeedFastestActivite.innerText = fastestActiviteAvarageSpeed;
+    paragraphDistanceFastestActivite.innerText = fastestActiviteDistance;
 
-const paragraphAvarageSpeedFarthestActivity = document.querySelector('#avarage-speed-longest-actvity-per-interval');
-const paragraphDistanceFarthestActivity = document.querySelector('#distance-longest-activity-per-interval');
+    const farthestActivityAvarageSpeed = localStorage.getItem('avarage-speed-longest-actvity-per-interval');
+    const farthestActivityDistance = localStorage.getItem('distance-longest-activity-per-interval');
 
-paragraphAvarageSpeedFarthestActivity.innerText = farthestActivityAvarageSpeed;
-paragraphDistanceFarthestActivity.innerText = farthestActivityDistance;
+    const paragraphAvarageSpeedFarthestActivity = document.querySelector('#avarage-speed-longest-actvity-per-interval');
+    const paragraphDistanceFarthestActivity = document.querySelector('#distance-longest-activity-per-interval');
+
+    paragraphAvarageSpeedFarthestActivity.innerText = farthestActivityAvarageSpeed;
+    paragraphDistanceFarthestActivity.innerText = farthestActivityDistance;
+    
+}
