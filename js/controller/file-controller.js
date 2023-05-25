@@ -1,5 +1,3 @@
-import * as elements from './elements.js';
-
 var fileData = [];
 
 export async function getDataFromFile(filePath){
