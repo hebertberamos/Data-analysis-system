@@ -55,6 +55,30 @@ function catchingActivityGreaterDistance(array){
     return longestActivity;
 }
 
+function getDate(element){
+    const date = element['Date'];
+
+    return date;
+}
+
+function getType(element){
+    const type = element['Type'];
+
+    return type;
+}
+
+function getDuration(element){
+    const duration = element['Duration'];
+
+    return duration;
+}
+
+function getCaloriesBurned(element){
+    const calories = element['Calories Burned'];
+
+    return calories;
+}
+
 function getAvarageSpeed(element){
     const avarageSpeed = element['Average Speed (km/h)'];
 
@@ -74,12 +98,34 @@ export function catchingObjectGreaterSpeed(){
     
     return fastestActivity;
 }
+
+// Capturando a data da atividade mais rápida
+export function catchingDateFromTheFastesActivity(){
+    const fastesActivity = catchingObjectGreaterSpeed();
+    const date = getDate(fastesActivity);
+
+    return date;
+}
+// Capturando o tipo de atividade 
+export function catchingTypeFromTheFastesActivity(){
+    const fastesActivity = catchingObjectGreaterSpeed();
+    const type = getType(fastesActivity);
+
+    return type;
+}
 // Capturando a distância da atividade mais rápida
 export function catchingDistanceFromTheFastesActivity(){
     const fastestActivity = catchingObjectGreaterSpeed();
     const distance = getDistance(fastestActivity);
 
     return distance;
+}
+// Capturando a duração da atividade mais rápida
+export function catchingDurationFromTheFastesActivity(){
+    const fastestActivity = catchingObjectGreaterSpeed();
+    const duration = getDuration(fastestActivity);
+
+    return duration;
 }
 // Capturando a velocidade mádia da atividade mais rápida
 export function catchingAvarageSpeedFromTheFastesActivity(){
@@ -88,14 +134,36 @@ export function catchingAvarageSpeedFromTheFastesActivity(){
 
     return avarageSpeed;
 }
+// Capturando a quantidade de calorias queimadas 
+export function catchingBurnedCaloriesFromTheFastesActivity(){
+    const fastestActivity = catchingObjectGreaterSpeed();
+    const caloriesBurned = getCaloriesBurned(fastestActivity);
+
+    return caloriesBurned;
+}
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
 // FUNÇÃO DE CAPTURA DA ATIVIDADE MAIS LONGA
-function catchingObjectGreaterDistance(){
+export function catchingObjectGreaterDistance(){
     const longestActivity = catchingActivityGreaterDistance(fileData);
 
     return longestActivity;
 }
+// Capturando data da atividade mais longa
+export function catchingDateFromTheLongerActivity(){
+    const longestActivity = catchingObjectGreaterDistance();
+    const date = getDate(longestActivity);
+
+    return date;
+}
+
+export function catchingTypeFromTheLongerActivity(){
+    const longestActivity = catchingObjectGreaterDistance();
+    const type = getType(longestActivity);
+
+    return type;
+}
+
 // Capturando distância da atividade mais longa
 export function catchingDistanceFromTheLongerActivity(){
     const longestActivity = catchingObjectGreaterDistance();
@@ -103,12 +171,28 @@ export function catchingDistanceFromTheLongerActivity(){
 
     return distance;
 }
+
+// Capturando a duração da atividade
+export function catchingDurationFromTheLongerActivity(){
+    const longestActivity = catchingObjectGreaterDistance();
+    const duration = getDuration(longestActivity);
+
+    return duration;
+}
+
 // Capturando a velocidade mádia da atividade mais longa
 export function catchingAvarageSpeedFromTheLongerActivity(){
     const longestActivity = catchingObjectGreaterDistance();
     const avarageSpeed = getAvarageSpeed(longestActivity);
 
     return avarageSpeed;
+}
+// Capturando as calorias quimadas durante a atividade
+export function catchingBurnedCaloriesFromTheLongerActivity(){
+    const longestActivity = catchingObjectGreaterDistance();
+    const burnedCalories = getCaloriesBurned(longestActivity);
+
+    return burnedCalories;
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------

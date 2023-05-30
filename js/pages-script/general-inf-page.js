@@ -1,8 +1,37 @@
-export function initGeneralInformationsPage(){
+import * as modalController from '../controller/modal-controller.js';
+import * as fileController from '../controller/file-controller.js';
+
+function State(){
+    this.cardFastesActivity = null;
+    this.cardLongestActivity = null;
+
+    this.cardFastestRace = null;
+    this.cardLongestRace = null;
+
+    this.cardFastestCiclism = null;
+    this.cardLongestCiclism = null;
+}
+
+const state = new State();
+
+export function init(){
+
+    state.cardFastesActivity = document.querySelector('#fastes-activity');
+    state.cardLongestActivity = document.querySelector('#longest-activity');
+    state.cardFastestRace = document.querySelector('#fastes-activity-run');
+    state.cardLongestRace = document.querySelector('#longest-activity-run');
+    state.cardFastestCiclism = document.querySelector('#fastes-activity-cycling');
+    state.cardLongestCiclism = document.querySelector('#longest-activity-cycling');
 
     //FASTES ACTIVITY
+    const titleFastestActivity = document.querySelector('#activity-name-fastest-activity'); 
+    const titleFastestActivityText = titleFastestActivity.innerText;
+    const fastestActivityDate = localStorage.getItem('date-from-fastes-activity');
+    const fastestActivityType = localStorage.getItem('type-from-fastes-activity');
     const fastestActivityDistance = localStorage.getItem('distance-from-fastes-activity');
+    const fastestActivityDuration = localStorage.getItem('duration-from-fastes-activity');
     const fastestActivityAvarageSpeed = localStorage.getItem('avarage-speed-from-fastes-activity');
+    const fastestActivityCaloriesBurned = localStorage.getItem('calories-burned-from-fastes-activity');
 
     const distanceFromFastActivity = document.querySelector('#distance-from-fastes-activity');
     const avarageSpeedFromFastActivity = document.querySelector('#avarage-speed-from-fastes-activity');
@@ -10,15 +39,36 @@ export function initGeneralInformationsPage(){
     distanceFromFastActivity.innerText = fastestActivityDistance;
     avarageSpeedFromFastActivity.innerText = fastestActivityAvarageSpeed;
 
+    state.cardFastesActivity.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        modalController.showModal();
+        modalController.getInformations(titleFastestActivityText, fastestActivityDate, fastestActivityType, fastestActivityDistance, fastestActivityDuration, fastestActivityAvarageSpeed, fastestActivityCaloriesBurned);
+    });
+
     // LONGER ACTIVITY
+    const titleLongestActivityDistance = document.querySelector('#activity-name-longest-activity');
+    const titleLongestActivityDistanceText = titleLongestActivityDistance.innerText;
+    const longestActivityDate = localStorage.getItem('date-from-longest-activity');
+    const longestActivityType = localStorage.getItem('type-from-longest-activity');
     const longestActivityDistante = localStorage.getItem('distance-from-longest-activity');
+    const longestActivityDuration = localStorage.getItem('duration-from-longest-activity');
     const longestActivityAvarageSpeed = localStorage.getItem('avarage-speed-from-longest-activity');
+    const longestActivityBurnedCalories = localStorage.getItem('calories-burned-from-longest-activity');
 
     const distanteFromLongestActivity = document.querySelector('#distance-from-longest-activity');
     const avarageSpeedFromLongestActivity = document.querySelector('#avarage-speed-from-longest-activity');
 
     distanteFromLongestActivity.innerText = longestActivityDistante;
     avarageSpeedFromLongestActivity.innerText = longestActivityAvarageSpeed;
+
+
+    state.cardLongestActivity.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        modalController.showModal();
+        modalController.getInformations(titleLongestActivityDistanceText, longestActivityDate, longestActivityType, longestActivityDistante, longestActivityDuration, longestActivityAvarageSpeed, longestActivityBurnedCalories);
+    })
 
     // FASTES RACE
     const fastestRaceDistance = localStorage.getItem('distance-from-fastes-activity-race');
