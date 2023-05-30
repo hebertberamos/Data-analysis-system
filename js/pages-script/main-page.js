@@ -56,18 +56,43 @@ state.cardShowAllInformationsMainPage.addEventListener('click', async() => {
     }
     else{
         //Atividade mais rápida
+        const fastestActiviteDate = fileController.catchingDateFromTheFastesActivity();
+        const fastestActivityType = fileController.catchingTypeFromTheFastesActivity();
         const fastestActivityDistance = fileController.catchingDistanceFromTheFastesActivity();
+        const fastestActivityDuration = fileController.catchingDurationFromTheFastesActivity();
         const fastestActivityAvarageSpeed = fileController.catchingAvarageSpeedFromTheFastesActivity();
+        const fastestActivityBurnedCalories = fileController.catchingBurnedCaloriesFromTheFastesActivity();
 
+        localStorage.setItem('date-from-fastes-activity', `${fastestActiviteDate}`);
+        localStorage.setItem('type-from-fastes-activity', `${fastestActivityType}`);
         localStorage.setItem('distance-from-fastes-activity', `${fastestActivityDistance} km`);
+        localStorage.setItem('duration-from-fastes-activity', `${fastestActivityDuration}`);
         localStorage.setItem('avarage-speed-from-fastes-activity', `${fastestActivityAvarageSpeed} km/h`);
+        localStorage.setItem('calories-burned-from-fastes-activity', `${fastestActivityBurnedCalories}`);
 
         //Atividade mais longa
+        const longestActivityDate = fileController.catchingDateFromTheLongerActivity();
+        const longestActivityType = fileController.catchingTypeFromTheLongerActivity();
         const longestActivityDistante = fileController.catchingDistanceFromTheLongerActivity();
+        const longestActivityDuration = fileController.catchingDurationFromTheLongerActivity();
         const longestActivityAvarageSpeed = fileController.catchingAvarageSpeedFromTheLongerActivity();
+        const longestActivityCaloriesBurned = fileController.catchingBurnedCaloriesFromTheLongerActivity();
 
+        const object = fileController.catchingObjectGreaterDistance();
+        console.log(object);
+        console.log("data", longestActivityDate);
+        console.log(longestActivityType)
+        console.log(longestActivityDistante);
+        console.log(longestActivityDuration);
+        console.log(longestActivityAvarageSpeed);
+        console.log(longestActivityCaloriesBurned);
+
+        localStorage.setItem('date-from-longest-activity', `${longestActivityDate}`);
+        localStorage.setItem('type-from-longest-activity', `${longestActivityType}`);
         localStorage.setItem('distance-from-longest-activity', `${longestActivityDistante} km`);
-        localStorage.setItem(`avarage-speed-from-longest-activity`, `${longestActivityAvarageSpeed} km/h`)
+        localStorage.setItem('duration-from-longest-activity', `${longestActivityDuration}`);
+        localStorage.setItem(`avarage-speed-from-longest-activity`, `${longestActivityAvarageSpeed} km/h`);
+        localStorage.setItem('calories-burned-from-longest-activity', `${longestActivityCaloriesBurned}`);
 
         //Corrida mais rapida 
         const speedFromFastestRun = fileController.catchingAvarageSpeedFromTheFastestRun();
@@ -98,7 +123,7 @@ state.cardShowAllInformationsMainPage.addEventListener('click', async() => {
         localStorage.setItem('avarage-speed-from-longest-activity-ciclism', `${avarageSpeedFromFarthesCiclism} km/h`);
 
         
-        window.location.href = 'pg-informacoes-gerais.html';
+        window.location.href = 'pages/pg-informacoes-gerais.html';
     }
 });
 
@@ -155,7 +180,7 @@ state.btnConfirmMainPage.addEventListener('click', (event) => {
             localStorage.setItem('avarage-speed-longest-actvity-per-interval', `${avarageSpeedFarthesActivite} km/h`);
             localStorage.setItem('distance-longest-activity-per-interval', `${distanceFarthesActivite} km`);
 
-            window.location.href = 'pg-informacoes-intervalo.html';
+            window.location.href = 'pages/pg-informacoes-intervalo.html';
         }
     }
 });

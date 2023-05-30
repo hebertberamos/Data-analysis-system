@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style-pg-informacoes-gerais.css">
-    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <title>Informações gerais</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
             <h1>Informações gerais</h1>
         </div>
         <div class="header-card-icon-home">
-            <a href="pagina-principal.html"><img src="../img/home.png" alt="home"></a>
+            <a href="../index.html"><img src="../img/home.png" alt="home"></a>
         </div>
     </header>
     <main>
@@ -25,7 +25,7 @@
                         <img src="../img/speed-img.png" alt="speed-img" style="height: 158.68px; width: 150px">
                     </div>
                     <div class="text-card">
-                        <h3>Atividade mais rápida</h3>
+                        <h3 id="activity-name-fastest-activity">Atividade mais rápida</h3>
                         <div class="paragraph" id="paragraph-fastes-activity">
                                 <p>A distância percorrida foi de</p>
                                 <p class="used-paragraph" id="distance-from-fastes-activity">XXX</p>
@@ -39,7 +39,7 @@
                         <img src="../img/long-activity-img.png" alt="long-activity">
                     </div>
                     <div class="text-card">
-                        <h3>Atividade mais longa</h3>
+                        <h3 id="activity-name-longest-activity">Atividade mais longa</h3>
                         <div class="paragraph" id="paragraph-longest-activity">
                             <p>A distância percorrida foi de</p> 
                             <p class="used-paragraph" id="distance-from-longest-activity">XXX</p>
@@ -56,7 +56,7 @@
                         <img src="../img/running-pic1-cropped.png" alt="running-pic">
                     </div>
                     <div class="text-card">
-                        <h3>Atividade mais rápida (Corrida)</h3>
+                        <h3>Corrida mais rápida</h3>
                         <div class="paragraph" id="paragraph-fastes-activity-run">
                             <p>A distância percorrida foi de</p> 
                             <p class="used-paragraph" id="distance-from-fastes-activity-race">XXX</p>
@@ -70,7 +70,7 @@
                         <img src="../img/running-pic1-cropped.png" alt="running-pic">
                     </div>
                     <div class="text-card">
-                        <h3>Atividade mais longa (Corrida)</h3>
+                        <h3>Corrida mais longa</h3>
                         <div class="paragraph" id="paragraph-longest-activity-run">
                             <p>A distância percorrida foi de</p>
                             <p class="used-paragraph" id="distance-from-longest-activity-race">XXX</p>
@@ -87,7 +87,7 @@
                         <img src="../img/cycle-img-cropped.png" alt="cycle-img">
                     </div>
                     <div class="text-card">
-                        <h3>Atividade mais rápida (Ciclismo)</h3>
+                        <h3>Ciclismo mais rápido</h3>
                         <div class="paragraph" id="paragraph-fastes-activity-cycling">
                             <p>A distância percorrida foi de</p> 
                             <p class="used-paragraph" id="distance-from-fastes-activity-ciclism">XXX</p>
@@ -101,7 +101,7 @@
                         <img src="../img/cycle-img-cropped.png" alt="cycle-img">
                     </div>
                     <div class="text-card">
-                        <h3>Atividade mais longa (Ciclismo)</h3>
+                        <h3>Ciclismo mais longo</h3>
                         <div class="paragraph" id="paragraph-longest-activity-cycling">
                             <p>A distância percorrida foi de</p>
                             <p class="used-paragraph" id="distance-from-longest-activity-ciclism">XXX</p>
@@ -113,24 +113,42 @@
             </div>
         </section>
     </main>
-    <section id="modal-general-informations" class="modal-container "> <!-- AQUI FICA O ACTIVE DO MODAL -->
+    <section id="modal-general-informations" class="modal-container"> <!-- AQUI FICA O ACTIVE DO MODAL -->
         <div class="modal-box">
             <div class="modal-content">
-                <div class="modal-content-img">
-                    
+                <div class="modal-header">
+                    <div class="modal-content-img">
+                        <img id="img-type-activity" src="../img/running-pic2.png" style="height: 170px; width: 150px;" alt="">
+                    </div>
+                    <div>
+                        <h1 id="activity-name">Nome da atividade</h1>
+                    </div>
                 </div>
+
                 <div class="modal-content-paragraph">
-                    <p>Data: <p id="paragraph-modal-date">xx/xx/xxxx</p></p>
-                    <p>Tipo: <p id="paragraph-modal-type">xxxxxx</p></p>
-                    <p>Distância: <p id="paragraph-modal-distance">xx.xx km</p></p>
-                    <p>Duração: <p id="paragraph-modal-duration">xxxxx</p></p>
-                    <p>Velocidade mádia: <p id="paragraph-modal-avarage-speed">xxxx km/h</p></p>
-                    <p>Calorias queimadas: <p id="paragraph-modal-calories-burned">xxxxx</p></p>
+                    <div class="paragraph-dont-change">
+                        <p>Data:</p>
+                        <p>Tipo:</p>
+                        <p>Distância:</p>
+                        <p>Duração:</p>
+                        <p>Velocidade média:</p>
+                        <p>Calorias queimadas:</p>
+                    </div>
+                    <div class="paragraph-change">
+                        <p id="paragraph-modal-date">xx/xx/xxxx</p>
+                        <p id="paragraph-modal-type">xxxxxx</p>
+                        <p id="paragraph-modal-distance">xx.xx km</p>
+                        <p id="paragraph-modal-duration">xxxxx</p>
+                        <p id="paragraph-modal-avarage-speed">xxxx km/h</p>
+                        <p id="paragraph-modal-calories-burned">xxxxx</p>
+                    </div>
                 </div>
+            <div class="modal-button-close">
+                <button id="btn-close-modal">Fechar</button>
             </div>
-            <button id="btn-close-modal">Fechar</button>
         </div>
+    </div>
     </section>
-    <script type="module" src="./js/initialize/init-general-inf-page.js"></script>
+    <script type="module" src="../js/initialize/init-general-inf-page.js"></script>
 </body>
 </html>
