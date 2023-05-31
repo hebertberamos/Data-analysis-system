@@ -43,6 +43,7 @@ export function init(){
         event.preventDefault();
 
         modalController.showModal();
+        modalController.chageImg(fastestActivityType);
         modalController.getInformations(titleFastestActivityText, fastestActivityDate, fastestActivityType, fastestActivityDistance, fastestActivityDuration, fastestActivityAvarageSpeed, fastestActivityCaloriesBurned);
     });
 
@@ -67,6 +68,7 @@ export function init(){
         event.preventDefault();
 
         modalController.showModal();
+        modalController.chageImg(longestActivityType);
         modalController.getInformations(titleLongestActivityDistanceText, longestActivityDate, longestActivityType, longestActivityDistante, longestActivityDuration, longestActivityAvarageSpeed, longestActivityBurnedCalories);
     })
 
