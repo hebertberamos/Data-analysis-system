@@ -1,5 +1,6 @@
 function State(){
 
+    this.img = null;
     this.modal = null;
     this.paragraphDate = null;
     this.paragraphType = null;
@@ -14,6 +15,7 @@ const state = new State();
 
 export function init(){
 
+    state.img = document.querySelector('#img-type-activity');
     state.modal = document.querySelector('#modal-general-informations');
     state.title = document.querySelector('#activity-name');
     state.paragraphDate = document.querySelector('#paragraph-modal-date');
@@ -23,9 +25,7 @@ export function init(){
     state.paragraphAvarageSpeed = document.querySelector('#paragraph-modal-avarage-speed');
     state.paragraphCaloriesBurned = document.querySelector('#paragraph-modal-calories-burned');
     state.btnClose = document.querySelector('#btn-close-modal');
-
-    // const fastestActivityDistance = localStorage.getItem('distance-from-fastes-activity');
-    // state.paragraphDistance.innerText = fastestActivityDistance;
+    
 
     state.btnClose.addEventListener('click', (event) => {
         event.preventDefault();
@@ -40,6 +40,14 @@ export function closeModal(){
 
 export function showModal(){
     state.modal.classList.add('active');
+}
+
+export function chageImg(type){
+    if(type == 'Running'){
+        state.img.src = "../img/running-pic1-cropped.png";
+    } else if(type == 'Cycling'){
+        state.img.src = "../img/cycle-img-cropped.png";
+    }
 }
 
 export function getInformations(title, date, type, distance, duration, avarageSpeed, caloriesBurned){

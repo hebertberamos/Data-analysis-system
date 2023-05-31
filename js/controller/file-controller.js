@@ -49,7 +49,7 @@ function catchingActivityGreaterSpeed(array){
 
 function catchingActivityGreaterDistance(array){
     const longestActivity = array.reduce((prev, current) => {
-        return prev['Distance'] > current['Distance'] ? prev : current;
+        return prev['Distance (km)'] > current['Distance (km)'] ? prev : current;
     });
 
     return longestActivity;
@@ -86,7 +86,7 @@ function getAvarageSpeed(element){
 }
 
 function getDistance(element){
-    const distance = element['Distance'];
+    const distance = element['Distance (km)'];
 
     return distance;
 }
@@ -309,6 +309,7 @@ export function catchingDistanceFromFarthesCiclism(){
 function getObjectsInsideParameter(inicialDistance, finalDistance){
 
     return fileData.filter(obj => {
+        obj.Distance = obj['Distance (km)'];
         return obj.Distance >= inicialDistance && obj.Distance <= finalDistance;
     });
 }
