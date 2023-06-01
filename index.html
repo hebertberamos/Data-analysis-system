@@ -4,86 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="css/style-pag-pricipal.css"
-    />
     <link rel="stylesheet" href="../css/style-pag-pricipal.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Página inicial</title>
 </head>
 <body>
     <main>
-        <section id="card-title-section" class="title-section">
-            <h1>Sistema de análise de dados de atividade física</h1>
-            <div class="card-divider">
-                <p></p>
-            </div>
-            <p>Confira agora o status das suas atividades físicas e fique por dentro de como andam seus exercícios!</p>
+        <section id="all-page">
+            <section id="card-title-section" class="title-section">
+                <h1>Sistema de análise de dados de atividade física</h1>
+                <div class="card-divider">
+                    <p></p>
+                </div>
+                <p>Confira agora o status das suas atividades físicas e fique por dentro de como andam seus exercícios!</p>
+            </section>
+            <section id="card-input-section" class="input-section">
+                <div class="section-input">
+                    <div class="card-divider-entrance">
+                        <div class="entrance-card" id="entrance-card-enter-file">
+                            <div class="img-entrance-card">
+                                <img src="../img/icon-file-150.png" alt="icon-file">
+                            </div>
+                            <div class="entrance-card-infomations">
+                                <h3 id="file-name">Selecione o arquivo CSV</h3>
+                                <input type="file" id="file-input" style="display: none;">
+                                <p>Importe seu arquivo em formato CSV clicando aqui!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-divider-entrance">
+                        <div class="entrance-card" id="entrance-card-general-informations">
+                            <div class="img-entrance-card">
+                                <img src="../img/data-icon-150.png" alt="icon-data">
+                            </div>
+                            <div class="entrance-card-infomations">
+                                <h3>Exibir informações gerais</h3>
+                                <p>Informações das suas atividades mais rápidas e atividades longas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-divider-entrance">
+                        <div class="entrance-card" id="entrance-card-information-time-interval">
+                            <div class="img-entrance-card">
+                                <img src="../img/icon-information-interval-150.png" alt="icon-information-interval">
+                            </div>
+                            <div class="entrance-card-infomations">
+                                <h3>Informações por intervalo</h3>
+                                <p>Clique aqui e informe o intervalo de tempo que deseja análisar as atividades</p>
+                            </div>
+                            <!-- Formulary -->
+                            <div class="card-form-enterance">
+                                <div class="card-form" id="span-card-form" style="display: none;">
+                                    <form name="interval-form">
+                                        <div class="form-controller">
+                                            <label for="starting-distance" ></label>
+                                            <input
+                                            type="text"
+                                            class="input-interval"
+                                            id="starting-distance"
+                                            placeholder="Distância inicial"
+                                            autocomplete="off">
+                                        </div>
+                                        <div class="form-controller">
+                                            <label for="final-distance"></label>
+                                            <input
+                                            type="text"
+                                            class="input-interval"
+                                            id="final-distance"
+                                            placeholder="Distância final"
+                                            autocomplete="off">
+                                        </div>
+                                        <div class="button">
+                                            <button id="btn-confirm">Confirmar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
-        <section id="card-input-section" class="input-section">
-            <div class="section-input">
-                <div class="card-divider-entrance">
-                    <div class="entrance-card" id="entrance-card-enter-file">
-                        <div class="img-entrance-card">
-                            <img src="../img/icon-file-150.png" alt="icon-file">
-                        </div>
-                        <div class="entrance-card-infomations">
-                            <h3 id="file-name">Selecione o arquivo CSV</h3>
-                            <input type="file" id="file-input" style="display: none;">
-                            <p>Importe seu arquivo em formato CSV clicando aqui!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-divider-entrance">
-                    <div class="entrance-card" id="entrance-card-general-informations">
-                        <div class="img-entrance-card">
-                            <img src="../img/data-icon-150.png" alt="icon-data">
-                        </div>
-                        <div class="entrance-card-infomations">
-                            <h3>Exibir informações gerais</h3>
-                            <p>Informações das suas atividades mais rápidas e atividades longas</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-divider-entrance">
-                    <div class="entrance-card" id="entrance-card-information-time-interval">
-                        <div class="img-entrance-card">
-                            <img src="../img/icon-information-interval-150.png" alt="icon-information-interval">
-                        </div>
-                        <div class="entrance-card-infomations">
-                            <h3>Informações por intervalo</h3>
-                            <p>Clique aqui e informe o intervalo de tempo que deseja análisar as atividades</p>
-                        </div>
-                    </div>
-                    <div class="card-form-enterance">
-                        <div class="card-form" id="span-card-form" style="display: none;">
-                            <p>Informe as distâncias</p>
-                            <form name="interval-form">
-                                <div class="form-controller">
-                                    <label for="starting-distance" ></label>
-                                    <input
-                                    type="text"
-                                    class="input-interval"
-                                    id="starting-distance"
-                                    placeholder="Distância inicial"
-                                    autocomplete="off">
-                                </div>
-                                <div class="form-controller">
-                                    <label for="final-distance"></label>
-                                    <input
-                                    type="text"
-                                    class="input-interval"
-                                    id="final-distance"
-                                    placeholder="Distância final"
-                                    autocomplete="off">
-                                </div>
-                                <div class="button">
-                                    <button id="btn-confirm">Confirmar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </main>
     <script type="module" src="./js/initialize/init.js"></script>
 </body>

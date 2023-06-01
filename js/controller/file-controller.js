@@ -210,6 +210,34 @@ function catchingFastesRun(){
 
     return fastestRun;
 }
+//Pegando o data da corrida mais rápida 
+export function catchingDateFromTheFastestRun(){
+    const fastestRun = catchingFastesRun();
+    const date = getDate(fastestRun);
+
+    return date;
+}
+//Pegando o tipo da corrida mais rápida
+export function catchingTypeFromTheFastestRun(){
+    const fastestRun = catchingFastesRun();
+    const type = getType(fastestRun);
+
+    return type;
+}
+//Pegando a duração da atividade
+export function catchingDurationFromTheFastestRun(){
+    const fastestRun = catchingFastesRun();
+    const duration = getDuration(fastestRun);
+
+    return duration;
+}
+//Pegando as calorias queimadas durante a atividade
+export function catchingBurnedCaloriesFromTheFastestRun(){
+    const fastestRun = catchingFastesRun();
+    const burnedCalories = getCaloriesBurned(fastestRun);
+
+    return burnedCalories;
+}
 // Pegando a velocidade da corrida mais rápida
 export function catchingAvarageSpeedFromTheFastestRun(){
     const fastestRun = catchingFastesRun();
@@ -234,6 +262,35 @@ function catchingFarthestRun(){
     const farthestRun = catchingActivityGreaterDistance(raceObject);
 
     return farthestRun;
+}
+
+//Pegando o data da corrida mais rápida 
+export function catchingDateFromTheLongestRun(){
+    const farthestRun = catchingFarthestRun();
+    const date = getDate(farthestRun);
+
+    return date;
+}
+//Pegando o tipo da corrida mais rápida
+export function catchingTypeFromTheLongestRun(){
+    const farthestRun = catchingFarthestRun();
+    const type = getType(farthestRun);
+
+    return type;
+}
+//Pegando a duração da atividade
+export function catchingDurationFromTheLongesttRun(){
+    const farthestRun = catchingFarthestRun();
+    const duration = getDuration(farthestRun);
+
+    return duration;
+}
+//Pegando as calorias queimadas durante a atividade
+export function catchingBurnedCaloriesFromTheLongesttRun(){
+    const farthestRun = catchingFarthestRun();
+    const burnedCalories = getCaloriesBurned(farthestRun);
+
+    return burnedCalories;
 }
 
 export function catchingAvarageSpeedFromFarthesRun(){
@@ -266,6 +323,35 @@ function catchingFastesCiclism(){
 
     return fastesCiclism;
 }
+//Pegando o data da corrida mais rápida 
+export function catchingDateFromTheFastesCiclism(){
+    const fastesCiclism = catchingFastesCiclism();
+    const date = getDate(fastesCiclism);
+
+    return date;
+}
+//Pegando o tipo da corrida mais rápida
+export function catchingTypeFromTheFastesCiclism(){
+    const fastesCiclism = catchingFastesCiclism();
+    const type = getType(fastesCiclism);
+
+    return type;
+}
+//Pegando a duração da atividade
+export function catchingDurationFromTheFastesCiclism(){
+    const fastesCiclism = catchingFastesCiclism();
+    const duration = getDuration(fastesCiclism);
+
+    return duration;
+}
+//Pegando as calorias queimadas durante a atividade
+export function catchingBurnedCaloriesFromTheFastesCiclism(){
+    const fastesCiclism = catchingFastesCiclism();
+    const burnedCalories = getCaloriesBurned(fastesCiclism);
+
+    return burnedCalories;
+}
+
 // Pegando a velocidade do ciclismo mais rapido
 export function catchingAvarageSpeedFromFastesCiclism(){
     const fastesCiclism = catchingFastesCiclism();
@@ -302,6 +388,34 @@ export function catchingDistanceFromFarthesCiclism(){
     const distanceFarthesCiclism = getDistance(longestCiclism);
 
     return distanceFarthesCiclism;
+}
+//Pegando o data da corrida mais rápida 
+export function catchingDateFromTheFarthesCiclism(){
+    const longestCiclism = catchingFarthestCiclism();
+    const date = getDate(longestCiclism);
+
+    return date;
+}
+//Pegando o tipo da corrida mais rápida
+export function catchingTypeFromTheFarthesCiclism(){
+    const longestCiclism = catchingFarthestCiclism();
+    const type = getType(longestCiclism);
+
+    return type;
+}
+//Pegando a duração da atividade
+export function catchingDurationFromTheFarthesCiclism(){
+    const longestCiclism = catchingFarthestCiclism();
+    const duration = getDuration(longestCiclism);
+
+    return duration;
+}
+//Pegando as calorias queimadas durante a atividade
+export function catchingBurnedCaloriesFromTheFarthesCiclism(){
+    const longestCiclism = catchingFarthestCiclism();
+    const burnedCalories = getCaloriesBurned(longestCiclism);
+
+    return burnedCalories;
 }
 
 
