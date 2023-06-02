@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style-pg-informacoes-intervalo.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <title>Informações por intervalo</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-information">
+            <div class="card-information" id="longes-activity-interval">
                 <div class="card-img">
                     <img src="../img/long-activity-img.png" alt="long-activity">
                 </div>
@@ -58,6 +59,42 @@
             </div>
         </section>
     </main>
+    <section id="modal-general-informations" class="modal-container"> <!-- AQUI FICA O ACTIVE DO MODAL -->
+        <div class="modal-box">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-content-img">
+                        <img id="img-type-activity" src="" style="height: 170px; width: 150px;" alt="">
+                    </div>
+                    <div>
+                        <h1 id="activity-name">Nome da atividade</h1>
+                    </div>
+                </div>
+
+                <div class="modal-content-paragraph">
+                    <div class="paragraph-dont-change">
+                        <p>Data:</p>
+                        <p>Tipo:</p>
+                        <p>Distância:</p>
+                        <p>Duração:</p>
+                        <p>Velocidade média:</p>
+                        <p>Calorias queimadas:</p>
+                    </div>
+                    <div class="paragraph-change">
+                        <p id="paragraph-modal-date">xx/xx/xxxx</p>
+                        <p id="paragraph-modal-type">xxxxxx</p>
+                        <p id="paragraph-modal-distance">xx.xx km</p>
+                        <p id="paragraph-modal-duration">xxxxx</p>
+                        <p id="paragraph-modal-avarage-speed">xxxx km/h</p>
+                        <p id="paragraph-modal-calories-burned">xxxxx</p>
+                    </div>
+                </div>
+            <div class="modal-button-close">
+                <button id="btn-close-modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+    </section>
     <script type="module" src="../js/initialize/init-interval-inf-page.js"></script>
 </body>
 </html>

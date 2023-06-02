@@ -435,6 +435,34 @@ function getFasterActiviteInterval(inicialDistance, finalDistance){
 
     return fastestActivityInterval;
 }
+//Pegando o data da corrida mais rápida 
+export function catchinDateFasterActiviteInterval(inicialDistance, finalDistance){
+    const fastestActiviteInterval = getFasterActiviteInterval(inicialDistance, finalDistance);
+    const date = getDate(fastestActiviteInterval);
+
+    return date;
+}
+//Pegando o tipo da corrida mais rápida
+export function catchinTypeFasterActiviteInterval(inicialDistance, finalDistance){
+    const fastestActiviteInterval = getFasterActiviteInterval(inicialDistance, finalDistance);
+    const type = getType(fastestActiviteInterval);
+
+    return type;
+}
+//Pegando a duração da atividade
+export function catchinDurationFasterActiviteInterval(inicialDistance, finalDistance){
+    const fastestActiviteInterval = getFasterActiviteInterval(inicialDistance, finalDistance);
+    const duration = getDuration(fastestActiviteInterval);
+
+    return duration;
+}
+//Pegando as calorias queimadas durante a atividade
+export function catchinBurnedCaloriesFasterActiviteInterval(inicialDistance, finalDistance){
+    const fastestActiviteInterval = getFasterActiviteInterval(inicialDistance, finalDistance);
+    const burnedCalories = getCaloriesBurned(fastestActiviteInterval);
+
+    return burnedCalories;
+}
 //pegando velocidade 
 export function catchinAvaraSpeedFasterActiviteInterval(inicialDistance, finalDistance){
     const fastestActiviteInterval = getFasterActiviteInterval(inicialDistance, finalDistance);
@@ -460,6 +488,34 @@ function getFarthestActiviteInterval(inicialDistance, finalDistance){
     const farthestActivityInterval = catchingActivityGreaterDistance(objects);
 
     return farthestActivityInterval;
+}
+//Pegando o data da corrida mais rápida 
+export function catchinDateFarthestActiviteInterval(inicialDistance, finalDistance){
+    const farthestActivityInterval = getFarthestActiviteInterval(inicialDistance, finalDistance);
+    const date = getDate(farthestActivityInterval);
+
+    return date;
+}
+//Pegando o tipo da corrida mais rápida
+export function catchinTypeFarthestActiviteInterval(inicialDistance, finalDistance){
+    const farthestActivityInterval = getFarthestActiviteInterval(inicialDistance, finalDistance);
+    const type = getType(farthestActivityInterval);
+
+    return type;
+}
+//Pegando a duração da atividade
+export function catchinDurationFarthestActiviteInterval(inicialDistance, finalDistance){
+    const farthestActivityInterval = getFarthestActiviteInterval(inicialDistance, finalDistance);
+    const duration = getDuration(farthestActivityInterval);
+
+    return duration;
+}
+//Pegando as calorias queimadas durante a atividade
+export function catchinBurnedCaloriesFarthestActiviteInterval(inicialDistance, finalDistance){
+    const farthestActivityInterval = getFarthestActiviteInterval(inicialDistance, finalDistance);
+    const burnedCalories = getCaloriesBurned(farthestActivityInterval);
+
+    return burnedCalories;
 }
 //pegando velocidade 
 export function catchinAvaraSpeedFarthestActiviteInterval(inicialDistance, finalDistance){

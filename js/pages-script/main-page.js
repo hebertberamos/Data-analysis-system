@@ -177,6 +177,14 @@ export function init(){
         finalDistance = parseFloat(state.inputFinalDistanceMainPage.value);
     });
 
+    document.addEventListener('click', (event) => {
+        var targetElement = event.target;
+
+        if(!state.cardShowInformationPerIntervalMainPage.contains(targetElement)){
+            state.cardFormIntervalMainPage.style.display = 'none';
+        }
+    });
+
     //Funcionalidade do botão de envio das informações do formulário 
     //Dar a ele a funcionalidade apenas quando os inputs estiverem devidamente informados
     state.btnConfirmMainPage.addEventListener('click', (event) => {
@@ -191,17 +199,33 @@ export function init(){
                 localStorage.setItem('start-distance', `${startDistanceNumber} km`);
                 localStorage.setItem('final-distance', `${finalDistanceNumber} km`);
 
+                const dateFastestActivite = fileController.catchinDateFasterActiviteInterval(startDistance, finalDistance);
+                const typeFastestActivite = fileController.catchinTypeFasterActiviteInterval(startDistance, finalDistance);
                 const avarageSpeedFastestActivite = fileController.catchinAvaraSpeedFasterActiviteInterval(startDistance, finalDistance);
+                const durationFastestActivite = fileController.catchinDurationFasterActiviteInterval(startDistance, finalDistance);
                 const distanceFastestActivite = fileController.catchingDistanceSpeedFasterActiviteInterval(startDistance, finalDistance);
+                const burnedCaloriesFastestActivite = fileController.catchinBurnedCaloriesFasterActiviteInterval(startDistance, finalDistance);
 
+                localStorage.setItem('date-fastes-activity-per-interval', `${dateFastestActivite}`);
+                localStorage.setItem('type-fastes-activity-per-interval', `${typeFastestActivite}`);
                 localStorage.setItem('avarage-speed-fastes-activity-per-interval', `${avarageSpeedFastestActivite} km/h`);
+                localStorage.setItem('duration-fastes-activity-per-interval', `${durationFastestActivite}`);
                 localStorage.setItem('distance-faster-activity-per-interval', `${distanceFastestActivite} km`);
+                localStorage.setItem('burned-calories-fastes-activity-per-interval', `${burnedCaloriesFastestActivite}`);
 
+                const dateFarthesActivite = fileController.catchinDateFarthestActiviteInterval(startDistance, finalDistance);
+                const typeFarthesActivite = fileController.catchinTypeFarthestActiviteInterval(startDistance, finalDistance);
                 const avarageSpeedFarthesActivite = fileController.catchinAvaraSpeedFarthestActiviteInterval(startDistance, finalDistance);
+                const durationFarthesActivite = fileController.catchinDurationFarthestActiviteInterval(startDistance, finalDistance);
                 const distanceFarthesActivite = fileController.catchinDistanceFarthestActiviteInterval(startDistance, finalDistance);
+                const burnedCaloriesFarthesActivite = fileController.catchinBurnedCaloriesFarthestActiviteInterval(startDistance, finalDistance);
 
+                localStorage.setItem('date-longest-activity-per-interval', `${dateFarthesActivite}`);
+                localStorage.setItem('type-longest-activity-per-interval', `${typeFarthesActivite}`);
                 localStorage.setItem('avarage-speed-longest-actvity-per-interval', `${avarageSpeedFarthesActivite} km/h`);
+                localStorage.setItem('duration-longest-activity-per-interval', `${durationFarthesActivite}`);
                 localStorage.setItem('distance-longest-activity-per-interval', `${distanceFarthesActivite} km`);
+                localStorage.setItem('burned-calories-longest-activity-per-interval', `${burnedCaloriesFarthesActivite}`);
 
                 window.location.href = 'pages/pg-informacoes-intervalo.html';
             }
