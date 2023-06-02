@@ -71,6 +71,7 @@
 
 /* Área de formatação dos cards */
 .entrance-card{
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.075);
     display: flex;
     flex-direction: column;
