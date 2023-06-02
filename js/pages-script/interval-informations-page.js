@@ -1,4 +1,16 @@
+import * as modaController from '../controller/modal-controller.js';
+
+function State() {
+    this.cardFastestActivity = null
+    this.cardLongestActivity = null;
+}
+
+const state = new State();
+
 export function initIntervalInformationsPage(){
+
+    state.cardFastestActivity = document.querySelector('#title-fastest-activity-per-interval');
+    state.cardLongestActivity = document.querySelector('#title-longest-activity-per-interval');
 
     const startDistance = localStorage.getItem('start-distance');
     const finalDistance = localStorage.getItem('final-distance');
